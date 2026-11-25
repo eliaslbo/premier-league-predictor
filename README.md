@@ -43,15 +43,6 @@ The main question I wanted to answer: **can a simple model built on public data 
 - The backtest shows a positive ROI, but the 95 % interval at threshold 0.05 is roughly ±20 %, so the result could easily be luck. The profit curve is driven by a few big wins at high odds.
 - If the model really had an edge, the ROI should go *up* when we only bet on the biggest edges. It goes down, which suggests that the largest "value" is mostly the model being wrong.
 
-## What I learned
-
-- **Test against the real odds.** My first backtest calculated value from odds with the bookmaker margin removed. That made the results look much better than they were. With the real odds the profit mostly disappeared.
-- **Compare with a baseline.** Accuracy alone says little. Always picking the bookmaker's favourite is already about 51 % accurate, so that is the bar to beat.
-- **Well calibrated probabilities matter more than accuracy** when you want to compare with odds. Limiting how deep the trees can grow (`min_samples_leaf`) gave much better probabilities than the default random forest.
-- **The bookmaker's odds are by far the most important feature.** The market already prices in most of the information in team form.
-
-Possible next steps: expected goals (xG), injuries and line-ups, Elo ratings, and comparing with odds from several bookmakers.
-
 ## Run it
 
 ```bash
